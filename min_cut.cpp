@@ -16,6 +16,25 @@ int main()
     }
     random_device rd; 
     mt19937 gen(rd());
-    uniform_int_distribution<> distrib(1, m);
-    int idx=distrib(gen);
+    int cut=0;
+    while (edge.size()>2)
+    {
+        uniform_int_distribution<> distrib(0, edge.size());
+        int idx=distrib(gen);
+        edge.erase(idx);
+        vector<vector<int>>edges;
+        for(int i=0;i<m;i++)
+        {
+            if(edge[u][v]==idx)
+            {
+                for(int i=0;i<m;i++)
+                {
+                    edges[u].push_back(v,w);
+                }
+                cut++;
+            }
+        }
+    }
+    cout<<cut<<endl;
+    
 }
