@@ -12,7 +12,7 @@ int main()
     {
         int u,v,w;
         cin>>u>>v;
-        edge.push_back({v});
+        edge.push_back({u,v});
     }
     random_device rd; 
     mt19937 gen(rd());
@@ -38,3 +38,4 @@ int main()
     cout<<cut<<endl;
     
 }
+
